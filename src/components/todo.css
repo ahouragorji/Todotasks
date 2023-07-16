@@ -1,20 +1,55 @@
 body{
     font-family:Georgia, 'Times New Roman', Times, serif;
     background-color: rgba(220, 220, 220, 0.466);
+    box-sizing: border-box;
 }
 input[type='text']{
-    background-color:aliceblue;
+    
     border: solid 5px white;
     border-radius:2px;
     width: 20%;
 } 
 button{
     margin:0.75em;
-    width:auto;
 }
+ul {
+    display: flex;
+    list-style-type: none;
+    width: 30%;
+    min-width: fit-content;
+    margin:2em auto;
+    align-items:flex-start;
+    flex-direction: column;
+    padding: 0;
 
+  }
+  li{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width:100%;
+    border:1px solid white;
+    border-radius: 10px;
+  }
+
+.item-name{
+    padding:0 15px;
+   text-align: start;
+    width: 80%;
+}
+li button{
+    display:inline-block;
+    border: none;
+    background-color: white;
+    padding: 1px;
+    min-width: fit-content;
+}
 header{
     font-weight: bold;
     font-size: 5em;
     margin:0.5em auto 0.5em;
+}
+li button:hover{
+    background-color: aliceblue;
 }

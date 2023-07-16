@@ -25,10 +25,13 @@ export default function TodoElement(){
     <input type = 'text' placeholder='Add Something' value={newItem}onChange={handleType}/>
     <button onClick={handleClick}>+</button>
     {/*list*/}
-    <ul>
+    <ul className="list-unstyled">
     {
         list.map((item)=>(
-        <li key={item.id}>{item.name}<button onClick={()=> handleDelete(item.id)}>delete</button></li>
+        <li key={item.id}>
+        <div className="item-name">{item.name}</div>
+        <button onClick={()=> handleDelete(item.id)}>❌</button>
+        </li>
                         )
                                 )
     }
