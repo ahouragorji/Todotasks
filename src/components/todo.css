@@ -1,0 +1,20 @@
+body{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color: rgba(220, 220, 220, 0.466);
+}
+input[type='text']{
+    background-color:aliceblue;
+    border: solid 5px white;
+    border-radius:2px;
+    width: 20%;
+} 
+button{
+    margin:0.75em;
+    width:auto;
+}
+
+header{
+    font-weight: bold;
+    font-size: 5em;
+    margin:0.5em auto 0.5em;
+}
