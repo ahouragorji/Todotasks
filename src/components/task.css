@@ -1,0 +1,43 @@
+.container{
+display: flex;
+width:100%;
+flex-direction: row;
+flex-wrap: nowrap;
+box-sizing: border-box;
+align-items: center;
+justify-content: space-between;
+
+}
+#name {
+    padding:0 15px;
+    text-align: start;
+     width: 80%;
+}
+button{
+    display:inline-block;
+    border: none;
+    background-color: white;
+    padding: 1px;
+    margin-right: 0.75rem;
+    min-width: fit-content;
+    justify-content: end;
+}
+.buttons{
+    justify-content: flex-end;
+    width: 20%;
+}
+input{
+    height: 100%;
+    font-size:1em;
+    width:fit-content;
+    padding: 0;
+    margin-left: 15px;
+    
+    text-align: start;
+    
+}
+.inputContainer{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+}

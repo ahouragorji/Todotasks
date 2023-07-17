@@ -3,14 +3,31 @@ body{
     background-color: rgba(220, 220, 220, 0.466);
     box-sizing: border-box;
 }
-input[type='text']{
-    
-    border: solid 5px white;
-    border-radius:2px;
+.header-container input{
+    border: solid 1px #fff;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    font-size: auto;
+   height: 100%;
+    padding-left: 15px;
+    border-radius:10px;
     width: 20%;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 } 
-button{
-    margin:0.75em;
+
+.header-container{
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: center;
+    align-items: center;
+}
+.header-container button{
+    display: block;
+    background-color: rgba(220, 220, 220, 0.466);
+    margin-left: 15px;
+    height: 100%;
+    width: fit-content;
 }
 ul {
     display: flex;
@@ -26,18 +43,17 @@ ul {
   li{
     background-color: white;
     display: flex;
+    height: 40px;
     flex-direction: row;
     align-items: center;
     width:100%;
     border:1px solid white;
     border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
+  
   }
 
-.item-name{
-    padding:0 15px;
-   text-align: start;
-    width: 80%;
-}
 li button{
     display:inline-block;
     border: none;
@@ -52,4 +68,7 @@ header{
 }
 li button:hover{
     background-color: aliceblue;
+}
+li > div{
+    width:100%;
 }
