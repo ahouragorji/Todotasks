@@ -15,7 +15,6 @@ export default function Task(props){
       }, [status]);
 
     const handleEdit = (e)=>{
-
         setNewName(e.target.value)
     }
     const handleSubmit=(e)=>{
