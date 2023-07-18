@@ -1,30 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { CSSTransition,TransitionGroup } from "react-transition-group";
 import './todo.css'
 import Task from "./task";
 export default function TodoElement(){
     const [list,setList] = useState([]);
     const[newItem,setNewItem] = useState("");
+    const [toRemove, setToRemove] = useState(null);
     const [addButtonActive,setAddButtonActive] = useState(0);
+    const[count,setCount] = useState(0)
 
     const handleClick =()=>{
-        const newListItem = {id:Math.random()*1000, name:newItem}
+        const newListItem = {id:count, name:newItem}
         setList([...list, newListItem])
         setNewItem("")
+        setCount(count+1)
         setAddButtonActive(0)
     }
     const handleType =(e)=>{
-   
       setNewItem(e.target.value)
     }
     const handleDelete =(id)=>{
         const newList = list.filter(item => item.id!==id)
-        // const ul = document.getElementById('list-unstyled').getelementby
-        const li = document.getElementById(id)
-        li.style.opacity=0
+        setToRemove(id);
         setTimeout(() => {
-          setList(newList)
-        }, 900);
+          setList(newList);
+        }, 100);
+      
     }
+  
     
   return(
     <div>
@@ -36,16 +39,19 @@ export default function TodoElement(){
     <button style={{opacity:addButtonActive}} onClick={handleClick}>➕</button>
     </div>
     {/*list*/}
-    <ul id="list-unstyled">
+    <TransitionGroup component="ul"  >
+    
     {
         list.map((item)=>(
-        <li key={item.id} id= {item.id}>
+          <CSSTransition  classNames="fade" in={toRemove!==null && toRemove==item.id?'Enter':'Exit'} timeout={500}  >
+        <li key={item.id}  id={item.id}>
         <div className="item-name"><Task name={item.name} id={item.id} status="done" handleDelete={handleDelete} /></div>
         </li>
+        </CSSTransition>
                         )
-                                )
+                                )            
     }
-    </ul>
+    </TransitionGroup>
     </div>
   );
 

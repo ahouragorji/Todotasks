@@ -69,10 +69,8 @@ ul {
     border-radius: 10px;
     margin-bottom: 10px;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.5);
-    animation: slideInDown 1s ease;
-    transition: all 1s ease;
-   
-    opacity: 1;
+    /* transition: all 1s ease; */
+    /* opacity: 1; */
   }
 
 li button{
@@ -93,3 +91,32 @@ li button:hover{
 li > div{
     width:100%;
 }
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  .fade-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  .fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  .fade-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .fade-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 300ms, transform 300ms;
+  }
+  .fade-exit-done{
+    opacity:0;
+  }
